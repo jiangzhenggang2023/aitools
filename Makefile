@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := gotcha
+.DEFAULT_GOAL := {{project_name}}
 
 # 获取 Git 提交哈希和时间，默认值处理非 Git 环境
 GITCOMMIT := $(shell git rev-parse HEAD 2>/dev/null || echo "unknown")
@@ -12,13 +12,13 @@ PROJECT_NAME := $(shell go list -m | awk -F/ '{print $$NF}')
 tidy:
 	go mod tidy
 
-# 编译 gotcha 程序，嵌入 Git 提交信息
-gotcha: tidy
+# 编译 {{project_name}} 程序，嵌入 Git 提交信息
+{{project_name}}: tidy
 	go build -v $(LDFLAGS) -o $(PROJECT_NAME) ./cmd
 
 # 清理生成的文件和 Go 缓存
 clean:
-	rm -f gotcha
+	rm -f {{project_name}}
 	go clean -cache -testcache
 
 # 运行所有测试
@@ -34,4 +34,4 @@ proto:
 	@test -f ./bin/compile.sh || (echo "compile.sh not found" && exit 1)
 	sh ./bin/compile.sh
 
-.PHONY: gotcha clean test lint proto tidy
+.PHONY: {{project_name}} clean test lint proto tidy

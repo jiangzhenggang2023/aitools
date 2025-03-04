@@ -36,9 +36,9 @@ func withCommit(gitCommit, gitDate string) string {
 
 func NewCli(GitCommit string, gitDate string) *cli.App {
 	return &cli.App{
-		Name:                 "Web3 Wallet Sign",
-		Usage:                "An exchange wallet scanner services with rpc and rest api services",
-		Description:          "An exchange wallet scanner services with rpc and rest api services",
+		Name:                 "{{project_name}}",
+		Usage:                "{{project_name}}",
+		Description:          "{{project_name}}",
 		Version:              withCommit(GitCommit, gitDate),
 		EnableBashCompletion: true, // Boolean to enable bash completion commands
 		Commands: []*cli.Command{
