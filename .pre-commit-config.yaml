@@ -39,7 +39,7 @@ repos:
         args: [ "-over=15" ]  # 复杂度超过 15 时警告
       - id: go-build
         name: go-build
-        entry: go build -o {{project_name}} ./cmd
+        entry: go build -o aitool ./cmd
         language: system
         pass_filenames: false
       - id: go-mod-tidy

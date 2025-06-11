@@ -36,9 +36,9 @@ func withCommit(gitCommit, gitDate string) string {
 
 func NewCli(GitCommit string, gitDate string) *cli.App {
 	return &cli.App{
-		Name:                 "{{project_name}}",
-		Usage:                "{{project_name}}",
-		Description:          "{{project_name}}",
+		Name:                 "aitool",
+		Usage:                "aitool",
+		Description:          "aitool",
 		Version:              withCommit(GitCommit, gitDate),
 		EnableBashCompletion: true, // Boolean to enable bash completion commands
 		Commands: []*cli.Command{
