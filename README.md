@@ -1,6 +1,7 @@
 # gotcha
 Gotcha - A lightweight Go template to catch your project needs fast.
 
+```shell
 my-gin-app/
 ├── cmd/                  # 应用入口文件 [1,2](@ref)
 │   └── server/
@@ -30,3 +31,4 @@ my-gin-app/
 ├── scripts/              # 部署/运维脚本
 ├── go.mod                # 依赖管理
 └── Makefile              # 构建自动化命令 [8](@ref)
+```
